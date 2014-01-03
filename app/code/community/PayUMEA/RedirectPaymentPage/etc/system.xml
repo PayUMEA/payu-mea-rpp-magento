@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<config>
+   <sections>
+        <payment>
+            <groups>
+                <payuMeaRedirectPaymentPage translate="label" module="payuMeaRedirectPaymentPage">
+                    <label>PayU MEA (Redirect Payment Page)</label>
+                    <sort_order>100</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                        <active translate="label">
+							<label>Gateway Enabled</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>1</sort_order>
+							<comment>&lt;i&gt; Only enable if you have all the required&lt;font style="color:red"&gt;*&lt;/font&gt; values. &lt;/i&gt; </comment>
+		    				<show_in_default>1</show_in_default>
+						  	<show_in_website>1</show_in_website>
+						  	<show_in_store>1</show_in_store>
+						</active>
+                        <title translate="label">
+							<label>Title</label>
+							<frontend_type>text</frontend_type>							
+							<sort_order>2</sort_order>
+							<comment>The text the shopper will see when selecting where to pay</comment>
+		    				<show_in_default>1</show_in_default>
+						  	<show_in_website>1</show_in_website>
+						  	<show_in_store>0</show_in_store>
+						</title>						
+                        <Environment translate="label">
+							<label>Staging Environment&lt;font style="color:red"&gt;*&lt;/font&gt;</label>
+                            <frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>							
+							<sort_order>3</sort_order>
+							<comment>Which PayU environment to use for transactions. (Staging = test environment)</comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</Environment>												
+						<SafeKey translate="label">
+							<label>SafeKey&lt;font style="color:red"&gt;*&lt;/font&gt;</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>4</sort_order>
+							<comment>SafeKey used in transactions</comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</SafeKey>	
+                        <SoapUsername translate="label">
+							<label>SOAP Username&lt;font style="color:red"&gt;*&lt;/font&gt;</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>5</sort_order>
+							<comment>SOAP API Username used in transactions </comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</SoapUsername>
+                        <SoapPassword translate="label">
+							<label>SOAP Password&lt;font style="color:red"&gt;*&lt;/font&gt;</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>6</sort_order>
+							<comment>SOAP API Password used in transactions</comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</SoapPassword>
+						<TransactionType translate="label">
+							<label>Transaction Type&lt;font style="color:red"&gt;*&lt;/font&gt;</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>7</sort_order>
+							<comment>Transaction type used for transactions</comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</TransactionType>
+						<PaymentMethods translate="label">
+							<label>Payment Method&lt;font style="color:red"&gt;*&lt;/font&gt;</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>8</sort_order>
+							<comment>Payment method used for transactions</comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</PaymentMethods>
+                        
+                        <BillingCurrency translate="label">
+							<label>Billing Currency&lt;font style="color:red"&gt;*&lt;/font&gt;</label>
+							<frontend_type>text</frontend_type>							
+							<sort_order>9</sort_order>
+							<comment>Currency used in transactions</comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</BillingCurrency>
+                        <InvoiceDescriptionPrepend translate="label">
+							<label>PayU Invoice Description Prepend</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>10</sort_order>
+							<comment>This value is added before the order number and sent to PayU with transactions and will display in invoices</comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</InvoiceDescriptionPrepend>
+						
+						<NotificationEmailAddress translate="label">
+							<label>Notification Email Address&lt;font style="color:red"&gt;*&lt;/font&gt;</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>11</sort_order>
+							<comment>Email address used for notifications via IPN from PayU</comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</NotificationEmailAddress>						
+						<!--
+                        <TransactionType translate="label">
+							<label>Transaction Type&lt;font style="color:red"&gt;*&lt;/font&gt;</label>
+							<frontend_type>select</frontend_type>
+							<source_model>payuMeaRedirectPaymentPage/adminconfig_transactiontype</source_model>							
+							<sort_order>7</sort_order>
+							<comment>Transaction type used for transactions</comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</TransactionType>
+						
+                        
+                        <ReturnURL translate="label">
+                            <label>Return URL&lt;font style="color:red"&gt;*&lt;/font&gt;</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>11</sort_order>
+                            <comment>The return URL after successful credit card processing.</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </ReturnURL>
+                        <CancelURL translate="label">
+                            <label>Cancel URL&lt;font style="color:red"&gt;*&lt;/font&gt;</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>12</sort_order>
+                            <comment>The cancel URL if cancel button was pressed</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </CancelURL>
+						-->
+                        <!--
+                        <NewOrderStatus translate="label">
+                            <label>Order Status before sending to PayU</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_order_status</source_model>
+                            <comment>This status will be given to an order once the customer click on the Pay button before redirecting to PayU for payment</comment>
+                            <sort_order>13</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </NewOrderStatus>
+                        <SuccessfulOrderStatus translate="label">
+                            <label>Order Status on successful payment</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_order_status</source_model>
+                            <comment>This status will be given to an order once the customer has done a successful payment on the PayU payment interface and successfully redirected back to the merchant’s website.</comment>
+                            <sort_order>14</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </SuccessfulOrderStatus> 
+                        <FailedOrderStatus translate="label">
+                            <label>Order Status on payment error/decline</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_order_status</source_model>
+                            <comment>This status will be given to an order if an error/decline was issued by PayU during the payment process once redirected once the customer has been successfully redirected back to the merchant’s website.</comment>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </FailedOrderStatus>
+                        <CancelOrderStatus translate="label">
+                            <label>Order Status on payment cancel</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_order_status</source_model>
+                            <comment>This status will be given to an order if the customer clicked on the cancel link on the on the PayU payment interface and successfully redirected back to the merchant’s website.</comment>
+                            <sort_order>16</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </CancelOrderStatus>       
+                        -->
+                        <sort_order translate="label">
+                            <label>Sort Order</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </sort_order>                        					
+                    </fields>
+                </payuMeaRedirectPaymentPage>
+            </groups>
+        </payment>
+    </sections>
+</config>

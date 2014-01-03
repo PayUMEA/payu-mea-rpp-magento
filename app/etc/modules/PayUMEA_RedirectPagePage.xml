@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<PayUMEA_RedirectPaymentPage>
+			<active>true</active>
+			<codePool>community</codePool>
+		</PayUMEA_RedirectPaymentPage>
+	</modules>
+</config>

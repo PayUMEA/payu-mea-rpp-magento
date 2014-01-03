@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!-- root\app\code\local\PayU\RedirectPaymentPage\etc\config.xml -->
+<config>
+	<modules>
+		<PayUMEA_RedirectPaymentPage>
+			<version>0.1.0</version>
+		</PayUMEA_RedirectPaymentPage>
+	</modules>
+	
+	<global>
+		<models>
+			<payuMeaRedirectPaymentPage>
+				<class>PayUMEA_RedirectPaymentPage_Model</class>
+			</payuMeaRedirectPaymentPage>
+		</models>
+		
+		<helpers>
+			<payuMeaRedirectPaymentPage>
+				<class>PayUMEA_RedirectPaymentPage_Helper</class>
+			</payuMeaRedirectPaymentPage>
+		</helpers>
+		
+		<blocks>
+			<payuMeaRedirectPaymentPage>
+				<class>PayUMEA_RedirectPaymentPage_Block</class>
+			</payuMeaRedirectPaymentPage>
+		</blocks>
+		
+		
+		<resources>
+			<payuMeaRedirectPaymentPage_setup>
+				<setup>
+					<module>PayURedirectPaymentPage</module>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</payuMeaRedirectPaymentPage_setup>
+			<payuMeaRedirectPaymentPage_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</payuMeaRedirectPaymentPage_write>
+			<payuMeaRedirectPaymentPage_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</payuMeaRedirectPaymentPage_read>
+		</resources>
+        
+    </global>
+	
+	<frontend>
+		<routers>
+			<payuMeaRedirectPaymentPage> 
+				<use>standard</use>
+				<args>
+					<module>PayUMEA_RedirectPaymentPage</module>
+					<frontName>payuMeaRedirectPaymentPage</frontName>
+				</args>
+			</payuMeaRedirectPaymentPage>
+		</routers>
+	</frontend>
+ 
+	<default>
+		<payment>
+            <payuMeaRedirectPaymentPage>
+                <active>1</active>
+                <model>payuMeaRedirectPaymentPage/standard</model>
+                <order_status>1</order_status>
+                <title>Credit Card (Processed By PayU)</title>
+                <TransactionType>PAYMENT</TransactionType>
+                <PaymentMethods>CREDITCARD</PaymentMethods>
+                <InvoiceDescriptionPrepend>Store Order Number:</InvoiceDescriptionPrepend>                
+                <NewOrderStatus>pending</NewOrderStatus>
+                <SuccessfulOrderStatus>processing</SuccessfulOrderStatus>
+				<BillingCurrency>ZAR</BillingCurrency>				
+                <FailedOrderStatus>canceled</FailedOrderStatus>
+                <CancelOrderStatus>canceled</CancelOrderStatus>
+                <debugging>1</debugging>
+            </payuMeaRedirectPaymentPage>
+		</payment>
+	</default>
+</config>
